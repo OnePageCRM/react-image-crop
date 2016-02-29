@@ -1,5 +1,3 @@
-import React from 'react';
-
 function objectAssign(target, source) {
 	let from;
 	let to = target;

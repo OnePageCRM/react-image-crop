@@ -3,13 +3,6 @@
 Object.defineProperty(exports, '__esModule', {
 	value: true
 });
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
 function objectAssign(target, source) {
 	var from = undefined;
 	var to = target;
@@ -37,14 +30,14 @@ function objectAssign(target, source) {
 	return to;
 }
 
-var ReactCrop = _react2['default'].createClass({
+var ReactCrop = React.createClass({
 	displayName: 'ReactCrop',
 
 	propTypes: {
-		src: _react2['default'].PropTypes.string.isRequired,
-		crop: _react2['default'].PropTypes.object,
-		minWidth: _react2['default'].PropTypes.number,
-		minHeight: _react2['default'].PropTypes.number
+		src: React.PropTypes.string.isRequired,
+		crop: React.PropTypes.object,
+		minWidth: React.PropTypes.number,
+		minHeight: React.PropTypes.number
 	},
 
 	xOrds: ['e', 'w'],
@@ -481,25 +474,25 @@ var ReactCrop = _react2['default'].createClass({
 	createCropSelection: function createCropSelection() {
 		var style = this.getCropStyle();
 
-		return _react2['default'].createElement(
+		return React.createElement(
 			'div',
 			{ ref: 'cropSelect',
 				style: style,
 				className: 'ReactCrop--crop-selection',
 				onMouseDown: this.onCropMouseTouchDown,
 				onTouchStart: this.onCropMouseTouchDown },
-			_react2['default'].createElement('div', { className: 'ReactCrop--drag-bar ord-n', 'data-ord': 'n' }),
-			_react2['default'].createElement('div', { className: 'ReactCrop--drag-bar ord-e', 'data-ord': 'e' }),
-			_react2['default'].createElement('div', { className: 'ReactCrop--drag-bar ord-s', 'data-ord': 's' }),
-			_react2['default'].createElement('div', { className: 'ReactCrop--drag-bar ord-w', 'data-ord': 'w' }),
-			_react2['default'].createElement('div', { className: 'ReactCrop--drag-handle ord-nw', 'data-ord': 'nw' }),
-			_react2['default'].createElement('div', { className: 'ReactCrop--drag-handle ord-n', 'data-ord': 'n' }),
-			_react2['default'].createElement('div', { className: 'ReactCrop--drag-handle ord-ne', 'data-ord': 'ne' }),
-			_react2['default'].createElement('div', { className: 'ReactCrop--drag-handle ord-e', 'data-ord': 'e' }),
-			_react2['default'].createElement('div', { className: 'ReactCrop--drag-handle ord-se', 'data-ord': 'se' }),
-			_react2['default'].createElement('div', { className: 'ReactCrop--drag-handle ord-s', 'data-ord': 's' }),
-			_react2['default'].createElement('div', { className: 'ReactCrop--drag-handle ord-sw', 'data-ord': 'sw' }),
-			_react2['default'].createElement('div', { className: 'ReactCrop--drag-handle ord-w', 'data-ord': 'w' })
+			React.createElement('div', { className: 'ReactCrop--drag-bar ord-n', 'data-ord': 'n' }),
+			React.createElement('div', { className: 'ReactCrop--drag-bar ord-e', 'data-ord': 'e' }),
+			React.createElement('div', { className: 'ReactCrop--drag-bar ord-s', 'data-ord': 's' }),
+			React.createElement('div', { className: 'ReactCrop--drag-bar ord-w', 'data-ord': 'w' }),
+			React.createElement('div', { className: 'ReactCrop--drag-handle ord-nw', 'data-ord': 'nw' }),
+			React.createElement('div', { className: 'ReactCrop--drag-handle ord-n', 'data-ord': 'n' }),
+			React.createElement('div', { className: 'ReactCrop--drag-handle ord-ne', 'data-ord': 'ne' }),
+			React.createElement('div', { className: 'ReactCrop--drag-handle ord-e', 'data-ord': 'e' }),
+			React.createElement('div', { className: 'ReactCrop--drag-handle ord-se', 'data-ord': 'se' }),
+			React.createElement('div', { className: 'ReactCrop--drag-handle ord-s', 'data-ord': 's' }),
+			React.createElement('div', { className: 'ReactCrop--drag-handle ord-sw', 'data-ord': 'sw' }),
+			React.createElement('div', { className: 'ReactCrop--drag-handle ord-w', 'data-ord': 'w' })
 		);
 	},
 
@@ -571,7 +564,7 @@ var ReactCrop = _react2['default'].createClass({
 			componentClasses.push('ReactCrop-fixed-aspect');
 		}
 
-		return _react2['default'].createElement(
+		return React.createElement(
 			'div',
 			{ ref: 'component',
 				className: componentClasses.join(' '),
@@ -579,11 +572,11 @@ var ReactCrop = _react2['default'].createClass({
 				onMouseDown: this.onComponentMouseTouchDown,
 				tabIndex: '1',
 				onKeyDown: this.onComponentKeyDown },
-			_react2['default'].createElement('img', { ref: 'image', className: 'ReactCrop--image', src: this.props.src, onLoad: this.onImageLoad }),
-			_react2['default'].createElement(
+			React.createElement('img', { ref: 'image', className: 'ReactCrop--image', src: this.props.src, onLoad: this.onImageLoad }),
+			React.createElement(
 				'div',
 				{ className: 'ReactCrop--crop-wrapper' },
-				_react2['default'].createElement('img', { ref: 'imageCopy', className: 'ReactCrop--image-copy', src: this.props.src, style: imageClip }),
+				React.createElement('img', { ref: 'imageCopy', className: 'ReactCrop--image-copy', src: this.props.src, style: imageClip }),
 				cropSelection
 			),
 			this.props.children
