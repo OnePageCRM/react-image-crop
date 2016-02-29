@@ -1,4 +1,3 @@
-import React from 'react';
 import assign from 'object-assign';
 
 const ReactCrop = React.createClass({
