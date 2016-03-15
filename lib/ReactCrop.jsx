@@ -38,7 +38,8 @@ const ReactCrop = React.createClass({
 		this.cropInvalid = (!crop.width || !crop.height);
 
 		return {
-			crop: crop
+			crop: crop,
+			firstMove: true
 		};
 	},
 
@@ -111,7 +112,12 @@ const ReactCrop = React.createClass({
 		const yDiffPx = clientPos.y - evData.clientStartY;
 		evData.yDiffPc = yDiffPx / evData.imageHeight * 100;
 
-		if (evData.isResize) {
+		if (this.state.firstMove){
+			this.setState({firstMove: false})
+			this.resizeCrop();
+			this.dragCrop();
+		}
+		else if (evData.isResize) {
 			this.resizeCrop();
 		} else {
 			this.dragCrop();
